@@ -8,7 +8,7 @@ class Accounts < ActiveRecord::Migration[5.1]
     t.column :zip, :integer
     t.column :phone, :integer
     t.column :active, :boolean
-
+    t.column :user_id, :integer
     t.timestamps
     end
   end

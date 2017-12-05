@@ -1,0 +1,14 @@
+
+<%= render "layouts/errors", :object => @book %>
+
+<%= form_for @book do |f| %>
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, :class => "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.file_field :image %>
+  </div>
+  <%= f.hidden_field(:user_id, :value => current_user.id) %>
+  <%= f.button :Submit, :class => 'btn btn-info' %>
+<% end %>

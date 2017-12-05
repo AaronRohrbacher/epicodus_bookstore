@@ -1,3 +1,3 @@
 <% @order_items.each do |item| %>
-<p><%= item.product.title %> <%= item.quantity %> | <%= link_to "Delete", order_item_path(item), :data => {:confirm => "You sure?", :method => "delete"} %></p>
+<p> <%= item.book.title %> | <%= link_to "Delete", order_item_path(item), :data => {:confirm => "You sure?", :method => "delete"} %></p>
 <% end %>

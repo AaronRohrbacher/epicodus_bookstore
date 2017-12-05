@@ -1,5 +1,6 @@
 class Book < ActiveRecord::Base
   has_many :order_items
+  has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
 
   validates :title, :presence => true
   validates :description, :presence => true
