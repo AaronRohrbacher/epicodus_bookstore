@@ -1,4 +1,11 @@
 class BooksController < ApplicationController
+  skip_before_action :authenticate_user!, :only => [:index]
+  before_action :authenticate_user!, only: [:new, :create]
+
+  before_action :only => [:edit, :update, :destroy] do
+    redirect_to new_user_session_path unless current_user && current_user.admin
+  end
+
   def index
     @books = Book.all
     @order_item = current_order.order_items.new
@@ -59,6 +66,6 @@ class BooksController < ApplicationController
 
   private
   def book_params
-    params.require(:book).permit(:title, :image, :description, :author, :contributor, :book_image, :publisher, :pages, :amazon_product_url, :price) ## Rails 4 strong params usage
+    params.require(:book).permit(:title, :image, :description, :author, :contributor, :image, :publisher, :pages, :amazon_product_url, :price) ## Rails 4 strong params usage
   end
 end

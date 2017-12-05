@@ -5,7 +5,6 @@ class Books < ActiveRecord::Migration[5.1]
     t.column :description, :text
     t.column :author, :string
     t.column :contributor, :string
-    t.column :book_image, :string
     t.column :publisher, :string
     t.column :pages, :integer
     t.column :amazon_product_url, :string

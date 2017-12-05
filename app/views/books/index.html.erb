@@ -4,20 +4,21 @@
 
 <div class="row">
   <% @books.each do |book| %>
-  <div class="col-md-4">
-    <p><%= book.title %> | <%= number_to_currency book.price %>
-      <%= form_for @order_item do |f| %>
-      <%= f.hidden_field :book_id, value: book.id %>
-      <%= f.number_field :quantity %>
-      <%= f.submit "Add to cart" %>
-      <% end %></p>
-    </div>
+    <div class="col-md-4">
+      <p><%= book.title %> | <%= number_to_currency book.price %>
+        <%= image_tag(book.image.url) %>
+        <%= form_for @order_item do |f| %>
+        <%= f.hidden_field :book_id, value: book.id %>
+        <%= f.number_field :quantity %>
+        <%= f.submit "Add to cart" %>
+        <% end %></p>
+      </div>
 
     <% counter += 1%>
-    <% if counter === 2 %>
+    <% if counter == 3 %>
       <% counter = 0 %>
-</div>
+  </div>
   <div class="row">
     <% end %>
-  </div>
 <% end %>
+</div>

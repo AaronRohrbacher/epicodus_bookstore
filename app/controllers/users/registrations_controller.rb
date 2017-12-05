@@ -11,7 +11,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def create
     super do |r|
       Account.create(:user_id => r.id)
-      # UserMailer.signup_confirmation(r).deliver ////Not implemented
+      UserMailer.signup_confirmation(r).deliver
     end
   end
 

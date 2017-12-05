@@ -6,7 +6,7 @@
     <ul class="navbar-nav mr-auto">
       <% if current_user %>
       <li class = "nav-item">
-        <%= image_tag(current_user.avatar.url(:medium)) %>
+        <%= image_tag current_user.avatar.url(:thumb), class: 'rounded-circle'%>
       </li>
       <li class="nav-item">
         <%= link_to 'Home', books_path, class: 'nav-link'%>
@@ -33,5 +33,11 @@
       </li>
       <% end %>
     </ul>
+    <% if current_user %>
+      <p>Welcome, <%= current_user.email %>!</p>
+      <% if current_order %>
+        <p><%= number_to_currency current_order.total_price %></p>
+      <%end%>
+    <% end %>
   </div>
 </nav>
