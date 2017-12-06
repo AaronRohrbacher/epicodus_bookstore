@@ -10,8 +10,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     super do |r|
+      if r.id
       Account.create(:user_id => r.id)
-      UserMailer.signup_confirmation(r).deliver
+        UserMailer.signup_confirmation(r).deliver
+      end
     end
   end
 

@@ -1,0 +1,17 @@
+<%= form_for @account do |f| %>
+  <%= f.label :address_one %>
+  <%= f.text_field :address_one %>
+  <%= f.label :address_two %>
+  <%= f.text_field :address_two %>
+  <%= f.label :city %>
+  <%= f.text_field :city %>
+  <%= f.label :state %>
+  <%= f.text_field :state %>
+  <%= f.label :zip %>
+  <%= f.text_field :zip %>
+  <%= f.label :phone %>
+  <%= f.text_field :phone %>
+  <%= f.label :active %>
+  <%= f.text_field :active %>
+  <%= f.submit "Add to cart" %>
+<% end %>

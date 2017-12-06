@@ -6,7 +6,7 @@
   <% @books.each do |book| %>
     <div class="col-md-4">
       <p><%= book.title %> | <%= number_to_currency book.price %>
-        <%= image_tag(book.image.url) %>
+        <%= link_to image_tag(book.image.url), book_path(book) %>
         <%= form_for @order_item do |f| %>
         <%= f.hidden_field :book_id, value: book.id %>
         <%= f.number_field :quantity %>

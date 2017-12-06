@@ -1,3 +1,11 @@
 <h1>Books</h1>
 
-<%= @book.title %>
+<p><%= @book.title %> | <%= number_to_currency @book.price %></p>
+
+<%= image_tag(@book.image.url) %>
+<div id="links">
+  <p><%= link_to "Edit", edit_book_path(@book), remote: true %> |
+  <%= link_to "Delete", book_path(@book),
+                           :data => {:confirm => "Are you sure?",
+                                          :method => "delete"} %></p>
+</div>
