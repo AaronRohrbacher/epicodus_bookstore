@@ -5,7 +5,9 @@ class ApplicationController < ActionController::Base
 
 
   def current_order
-    if session[:order_id]
+    if current_user && current_user.account.orders.any? && current_user.account.orders.last.status == "In progress"
+      current_user.account.orders.last
+    elsif session[:order_id]
       Order.find(session[:order_id])
     elsif current_user
       Order.new(:account_id => current_user.account.id)
