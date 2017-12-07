@@ -2,3 +2,5 @@
 <p id ="<%= item.id %>"> <%= item.book.title %> | <%= link_to "Delete", order_item_path(item), remote: true, :data => {:confirm => "You sure?", :method => "delete"} %></p>
 <% end %>
 <p>Your Total: <span class="total"><%= number_to_currency current_order.total_price %></span></p>
+
+<%= link_to 'Checkout', new_charge_path, class: 'btn btn-success' %>

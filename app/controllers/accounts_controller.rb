@@ -2,7 +2,7 @@ class AccountsController < ApplicationController
 
   def show
       @account = Account.find(params[:id])
-      
+
   end
 
   def edit
@@ -22,7 +22,7 @@ class AccountsController < ApplicationController
 
 private
   def account_params
-    params.require(:account).permit(:address_one, :address_two, :city, :state, :zip, :phone, :active)
+    params.require(:account).permit(:address_one, :address_two, :city, :state, :zip, :phone, :first_name, :last_name, :active)
   end
 
 end

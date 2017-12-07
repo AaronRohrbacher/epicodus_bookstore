@@ -1,8 +1,11 @@
 <div class="form-group">
   <%= form_for @account do |f| %>
 
+  <h2><%= f.label :first_name %></h2>
+  <%= f.text_field :first_name, class: "form-control" %>
+  <h2><%= f.label :last_name %></h2>
+  <%= f.text_field :last_name, class: "form-control" %>
   <h2><%= f.label :address_one %></h2>
-
   <%= f.text_field :address_one, class: "form-control" %>
   <h2><%= f.label :address_two %></h2>
   <%= f.text_field :address_two, class: "form-control" %>
@@ -14,9 +17,8 @@
   <%= f.text_field :zip, class: "form-control" %>
   <h2><%= f.label :phone %></h2>
   <%= f.text_field :phone, class: "form-control" %>
-<h2>  <%= f.label :active %></h2>
-  <%= f.text_field :active, class: "form-control" %>
-  <%= f.submit "Submit", class:'btn btn-info' %>
+
+  <%= f.submit "Submit", class: 'btn btn-info' %>
   <% end %>
 
 </div>

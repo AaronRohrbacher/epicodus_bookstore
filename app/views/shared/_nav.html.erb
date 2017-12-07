@@ -34,16 +34,16 @@
       <% end %>
     </ul>
     <% if current_user %>
-      <p>Welcome, <%= current_user.email %>!</p>
+      <p class="nav">Welcome, <%= current_user.account.first_name %> |</p>
       <% if current_order %>
-        <p class="total"><%= number_to_currency current_order.total_price %></p>
+        <p class="nav total">&nbsp<%= number_to_currency current_order.total_price %>&nbsp</p>
       <%end%>
     <% end %>
 
     <% if current_user %>
       <%= form_tag(books_path, :method => "get", id: "search-form") do %>
           <%= text_field_tag :search, params[:search], placeholder: "Find Books!" %>
-          <%= submit_tag "Search", :name => nil %>
+          <%= submit_tag "Search", class: "btn btn-success", :name => nil %>
       <% end %>
     <% end %>
   </div>
