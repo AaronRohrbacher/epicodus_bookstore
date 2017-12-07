@@ -7,7 +7,11 @@ class BooksController < ApplicationController
   end
 
   def index
-    @books = Book.all
+    if params[:search]
+      @books = Book.search(params[:search]).order("created_at DESC")
+    else
+      @books = Book.all
+    end
     @order_item = current_order.order_items.new
   end
 

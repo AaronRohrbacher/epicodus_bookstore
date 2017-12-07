@@ -12,4 +12,8 @@ class Book < ActiveRecord::Base
   validates :pages, :presence => true
   validates :amazon_product_url, :presence => true
   validates :price, :presence => true
+
+  def self.search(book)
+    where("title ILIKE ? OR author ILIKE ? ", "%#{book}%", "%#{book}%")
+  end
 end

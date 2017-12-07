@@ -1,4 +1,4 @@
 <% @order_items.each do |item| %>
-<p> <%= item.book.title %> | <%= link_to "Delete", order_item_path(item), :data => {:confirm => "You sure?", :method => "delete"} %></p>
+<p id ="<%= item.id %>"> <%= item.book.title %> | <%= link_to "Delete", order_item_path(item), remote: true, :data => {:confirm => "You sure?", :method => "delete"} %></p>
 <% end %>
-<p>Your Total: <%= number_to_currency current_order.total_price %></p>
+<p>Your Total: <span class="total"><%= number_to_currency current_order.total_price %></span></p>

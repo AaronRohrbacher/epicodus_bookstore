@@ -1,0 +1,12 @@
+
+<%= image_tag @account.user.avatar.url %>
+<br>
+<p><%= @account.address_one %></p>
+<p><%= @account.address_two %></p>
+<p><%= @account.city %>, <%= @account.state %>. <%= @account.zip %></p>
+<br>
+<p>Email: <%= @account.user.email %></p>
+<p>Phone: <%= @account.phone %></p>
+<p>Active: <%= @account.active %></p>
+
+<%= link_to "Edit Account", edit_account_path(@account), id: "edit_account", remote: true %>
