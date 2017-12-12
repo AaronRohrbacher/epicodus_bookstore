@@ -4,9 +4,10 @@ _A simple, full-featured shopping cart application written in Ruby on Rails. Pay
 ## Installation
 * _NOTE:_ For security purposes, the API key for Stripe is not included in this repository, and test payments will not function without it. If you'd like to run this application with Stripe's full functionality, visit http://stripe.com and obtain your own API key, or email me at arjazz@icloud.com for more information.
   * This application uses the dotenv-rails gem to search for .env files, which have been ignored in this repository. To use your own API key for Stripe, create a file in the root directory of the project named '.env', and add the following lines of code:
-``  PUBLISHABLE_KEY='your new publishable key'
-  SECRET_KEY='your new secret key'
-``
+```  
+PUBLISHABLE_KEY='your new publishable key'
+SECRET_KEY='your new secret key'
+```
 * This application was built on Ruby 2.4.1 on Rails 5.1.4, using PostgreSQL as a database server. If you have these or equivalent versions installed, you're ready to install this repository:
   * If you need to install Ruby and/or Rails, I reccommend a version manager. Apple users, don't use the pre-installed version of Ruby. Check out https://github.com/postmodern/chruby, great start-up documentation, and a great ruby version manager and installer. Use the instructions to install with Homebrew (https://brew.sh/).
 
