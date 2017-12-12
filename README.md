@@ -19,3 +19,24 @@ _A simple, full-featured shopping cart application written in Ruby on Rails. Pay
 * Create and migrate the databases (pre-seeded and ready to go!): `$ rails db:setup`
 * Open a new terminal tab, and serve the project in development mode: `$ rails s`
 * Open your favorite web browser, point to http://localhost:3000/ (most common configuration), and have fun! This is a fully-featured shopping cart system, with user authentication and payment-ready (don't forget, you'll need to get an API key and include it in the code.)
+
+## Use
+
+* I've seeded the database with two users, a user and an admin.
+  * User: user@user.com password: 111111
+  * Admin: admin@admin.com password: 111111
+
+* Admins can edit/delete books, and access the Rails Admin route (http://localhost:3000/admin).
+
+* Play around! Create items, edit your account, edit items, delete items, create accounts, etc.
+
+* You can use Rails Admin (http://localhost:300/admin) to make a user an admin, if you're logged in as an admin. I recommend using the Rails console for this, but it is a nice feature.
+
+## Technologies used
+
+* Built in Ruby 2.4.1 on Rails 5.1.4
+* Uses Postgres as SQL server
+* uses Rails Admin gem
+* Authentication with the Devise gem, customized.
+* Test e-mails sent with the Letter Opener gem.
+* Image upload capability uses the Paperclip gem.
