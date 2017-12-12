@@ -5,9 +5,9 @@ FactoryBot.define do
     password('password')
   end
 
-  factory (:admin, class: User) do
-    email('aaron@gmail.com')
-    password('password')
-    admin(true)
-  end
+  # factory (:admin, class: User) do
+  #   email('aaron@gmail.com')
+  #   password('password')
+  #   admin(true)
+  # end
 end
